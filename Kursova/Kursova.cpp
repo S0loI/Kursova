@@ -1,13 +1,13 @@
 ﻿#include <iostream>
 #include <string>
-#include <lcoal.h>
+#include <locale.h>
 
 
 using namespace std;
 
 int main() {
     string usertype;
-    set local(LC_CTYPE, "rus");
+    setlocale (LC_CTYPE, "rus");
 
     while (true) {
         cout << "Виберіть акаунт для входу:" << endl ;
@@ -30,4 +30,5 @@ int main() {
     }
 
     return 0;
+    system(" PAUSE ");
 }
