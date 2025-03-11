@@ -1,9 +1,22 @@
 ﻿#include <iostream>
 #include <string>
+#include <vector>
 #include <locale.h>
 
 
 using namespace std;
+
+struct Product {
+    string name;
+    string category;
+    double price;
+    int quantity;
+
+    vector<Product> store;
+    bool storeOpen = true;
+    vector<string> promotions;
+    vector<string> promocodes;
+    vector<string> bonuses;
 
 int main() {
     string usertype;
@@ -30,5 +43,4 @@ int main() {
     }
 
     return 0;
-    system(" PAUSE ");
 }
