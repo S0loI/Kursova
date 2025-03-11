@@ -53,7 +53,28 @@ struct Product {
                         }
 
                         Product newProduct;
-                        int categoryChoice;
+                        string categoryChoice;
+
+                        cout << "Оберіть категорію товару: ";
+                        cin.ignore(); 
+                        getline(cin, categoryChoice);
+
+                        if (categoryChoice == "іграшка") {
+                            newProduct.category = "Іграшка";
+                        }
+                        else if (categoryChoice == "одежа") {
+                            newProduct.category = "Одежа";
+                        }
+                        else if (categoryChoice == "взуття") {
+                            newProduct.category = "Взуття";
+                        }
+                        else if (categoryChoice == "речі для дітей до 2 років") {
+                            newProduct.category = "Речі до 2 років";
+                        }
+                        else {
+                            cout << "Невірний вибір категорії." << endl;
+                            continue;
+                        }
                         break;
                     }
 
