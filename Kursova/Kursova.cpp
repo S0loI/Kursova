@@ -61,13 +61,17 @@ int main() {
 
                     if (categoryChoice == "іграшка") {
                         newProduct.category = "Іграшка";
-                    } else if (categoryChoice == "одежа") {
+                    }
+                    else if (categoryChoice == "одежа") {
                         newProduct.category = "Одежа";
-                    } else if (categoryChoice == "взуття") {
+                    }
+                    else if (categoryChoice == "взуття") {
                         newProduct.category = "Взуття";
-                    } else if (categoryChoice == "речі для дітей до 2 років") {
+                    }
+                    else if (categoryChoice == "речі для дітей до 2 років") {
                         newProduct.category = "Речі до 2 років";
-                    } else {
+                    }
+                    else {
                         cout << "Невірний вибір категорії." << endl;
                         continue;
                     }
@@ -92,17 +96,77 @@ int main() {
                         cout << "Магазин відкрито." << endl;
                     }
                 }
+                else if (action == 3) {
+                    string promo;
+                    cout << "Введіть опис акції: ";
+                    cin.ignore();
+                    getline(cin, promo);
+                    for (auto& product : store) {
+                        product.promotions.push_back(promo);
+                    }
+                    cout << "Акція успішно додана." << endl;
+                }
+                else if (action == 4) {
+                    string code;
+                    cout << "Введіть промокод: ";
+                    cin.ignore();
+                    getline(cin, code);
+                    for (auto& product : store) {
+                        product.promocodes.push_back(code);
+                    }
+                    cout << "Промокод успішно доданий." << endl;
+                }
+                else if (action == 5) {
+                    string bonus;
+                    cout << "Введіть опис бонусу: ";
+                    cin.ignore();
+                    getline(cin, bonus);
+                    for (auto& product : store) {
+                        product.bonuses.push_back(bonus);
+                    }
+                    cout << "Бонус успішно доданий." << endl;
+                }
+                else if (action == 6) {
+                    if (store.size() == 0) {
+                        cout << "Товарів поки немає." << endl;
+                    }
+                    else {
+                        cout << "Список товарів:" << endl;
+                        for (int i = 0; i < store.size(); i++) {
+                            cout << i + 1 << ". Назва: " << store[i].name << ", Категорія: " << store[i].category
+                                << ", Ціна: " << store[i].price << ", Кількість: " << store[i].quantity << endl;
+                            cout << "Акції: ";
+                            for (const auto& promo : store[i].promotions) {
+                                cout << promo << " ";
+                            }
+                            cout << endl;
+                            cout << "Промокоди: ";
+                            for (const auto& code : store[i].promocodes) {
+                                cout << code << " ";
+                            }
+                            cout << endl;
+                            cout << "Бонуси: ";
+                            for (const auto& bonus : store[i].bonuses) {
+                                cout << bonus << " ";
+                            }
+                            cout << endl;
+                        }
+                    }
+                }
                 else if (action == 7) {
                     cout << "Вихід з акаунту Продавець." << endl;
                     break;
-                } else {
+                }
+                else {
                     cout << "Невірний вибір, спробуйте ще раз." << endl;
                 }
             }
-        } else if (usertype == "2" || usertype == "покупець") {
+        }
+        else if (usertype == "2" || usertype == "покупець") {
             cout << "Ви успішно увійшли як Покупець." << endl;
             break;
-        } else {
+        }
+        else {
             cout << "Невірний вибір, спробуйте ще раз." << endl;
         }
     }
