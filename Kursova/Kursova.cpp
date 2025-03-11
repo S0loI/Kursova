@@ -81,7 +81,18 @@ int main() {
 
                     store.push_back(newProduct);
                     cout << "Товар успішно доданий." << endl;
-                } else if (action == 7) {
+                }
+                else if (action == 2) {
+                    if (storeOpen) {
+                        storeOpen = false;
+                        cout << "Магазин зачинено." << endl;
+                    }
+                    else {
+                        storeOpen = true;
+                        cout << "Магазин відкрито." << endl;
+                    }
+                }
+                else if (action == 7) {
                     cout << "Вихід з акаунту Продавець." << endl;
                     break;
                 } else {

@@ -1,5 +1,2 @@
 ﻿  Kursova.cpp
-C:\Users\indef\OneDrive\Desktop\Kursova\Kursova\Kursova.cpp(50,32): error C2039: 'Open': is not a member of 'std::vector<Product,std::allocator<Product>>'
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(429,7):
-      see declaration of 'std::vector<Product,std::allocator<Product>>'
-  
+  Kursova.vcxproj -> C:\Users\indef\OneDrive\Desktop\Kursova\x64\Debug\Kursova.exe
