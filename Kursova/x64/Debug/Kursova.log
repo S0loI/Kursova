@@ -1,2 +1,1 @@
-﻿  Kursova.cpp
-  Kursova.vcxproj -> C:\Users\indef\OneDrive\Desktop\Kursova\x64\Debug\Kursova.exe
+﻿LINK : fatal error LNK1168: cannot open C:\Users\indef\OneDrive\Desktop\Kursova\x64\Debug\Kursova.exe for writing
