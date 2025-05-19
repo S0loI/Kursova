@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
       <FullPath>C:\Users\MrR0d\OneDrive\Desktop\Kursova-master\x64\Debug\Kursova.exe</FullPath>
+=======
+      <FullPath>C:\Users\MrR0d\OneDrive\Desktop\Kursova\x64\Debug\Kursova.exe</FullPath>
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

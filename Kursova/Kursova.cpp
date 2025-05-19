@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 #include <iostream>
+=======
+﻿#include <iostream>
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
 #include <string>
 #include <vector>
 #include <locale>
 #include <fstream>
 #include <iomanip>
+<<<<<<< HEAD
 #include <algorithm>
+=======
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
 
 using namespace std;
 
@@ -14,6 +21,7 @@ struct Product {
     double price = 0.0;
     int quantity = 0;
     vector<string> promotions, promocodes, bonuses;
+<<<<<<< HEAD
 
     Product() = default;
     Product(int i, string n, string c, double p, int q) : id(i), name(n), category(c), price(p), quantity(q) {}
@@ -52,6 +60,8 @@ struct Product {
         }
         return price * (1.0 - discount / 100);
     }
+=======
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
 };
 
 struct CartItem {
@@ -135,9 +145,15 @@ void printTable(const vector<Product>& store) {
 void printCart(const vector<CartItem>& cart, const vector<Product>& store) {
     double total = 0;
     cout << "Ваш кошик:\n";
+<<<<<<< HEAD
     cout << "╔════════════════════════════════╦════════════╦════════════╦══════════════╗\n";
     cout << "║ Назва товару                   ║ Кількість  ║ Ціна       ║ Сума         ║\n";
     cout << "╠════════════════════════════════╬════════════╬════════════╬══════════════╣\n";
+=======
+    cout << "╔════════════════════════════════╦════════════╦════════════╦════════════╗\n";
+    cout << "║ Назва товару                  ║ Кількість  ║ Ціна       ║ Сума       ║\n";
+    cout << "╠════════════════════════════════╬════════════╬════════════╬════════════╣\n";
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
 
     for (const auto& item : cart) {
         for (const auto& p : store) {
@@ -153,6 +169,7 @@ void printCart(const vector<CartItem>& cart, const vector<Product>& store) {
         }
     }
 
+<<<<<<< HEAD
     cout << "╠════════════════════════════════╩═════════════╩═════════════╬════════════╣\n";
     cout << "║ Загальна сума                                              ║ " << setw(10) << right << fixed << setprecision(2) << total << " ║\n";
     cout << "╚════════════════════════════════════════════════════════════╩════════════╝\n";
@@ -228,6 +245,14 @@ void addProduct(vector<Product>& products) {
     displayProductTable(product);
 }
 
+=======
+    cout << "╠════════════════════════════════╩════════════╩════════════╬════════════╣\n";
+    cout << "║ Загальна сума                                            ║ " << setw(10) << right << fixed << setprecision(2) << total << " ║\n";
+    cout << "╚═════════════════════════════════════════════════════════════════════╝\n";
+}
+
+// Функція для збереження повної інформації про кошик
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
 void saveFullCartInfo(const vector<CartItem>& cart, const vector<Product>& store) {
     ofstream file("cart_full.txt");
     double total = 0;
@@ -280,6 +305,7 @@ void saveFullCartInfo(const vector<CartItem>& cart, const vector<Product>& store
     file.close();
 }
 
+<<<<<<< HEAD
 void searchProduct(const vector<Product>& store) {
     cin.ignore();
     string keyword;
@@ -350,6 +376,8 @@ void sortAndPrintTable(vector<Product>& store) {
     printTable(store);
 }
 
+=======
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
 int main() {
     setlocale(LC_ALL, "uk_UA.UTF-8");
     vector<Product> store = load();
@@ -376,12 +404,17 @@ int main() {
                 cout << "║ 2. Видалити товар                            ║\n";
                 cout << "║ 3. Редагувати товар                          ║\n";
                 cout << "║ 4. Показати всі товари                       ║\n";
+<<<<<<< HEAD
                 cout << "║ 5. Додати акцію / промокод / бонус           ║\n";
                 cout << "║ 6. Переглянути звіт про замовлення           ║\n";
                 cout << "║ 7. Пошук товару                              ║\n";
                 cout << "║ 8. Статистика по продажам                    ║\n";
                 cout << "║ 9. Інформація про останній товар             ║\n";
                 cout << "║10. Назад                                     ║\n";
+=======
+                cout << "║ 5. Переглянути звіт про замовлення           ║\n";
+                cout << "║ 6. Назад                                     ║\n";
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
                 cout << "╚══════════════════════════════════════════════╝\n";
                 cout << "Ваш вибір: ";
                 int action;
@@ -389,7 +422,17 @@ int main() {
                 cin.ignore();
 
                 if (action == 1) {
+<<<<<<< HEAD
                     addProduct(store);
+=======
+                    Product p;
+                    cout << "ID: "; cin >> p.id; cin.ignore();
+                    cout << "Назва: "; getline(cin, p.name);
+                    cout << "Категорія: "; getline(cin, p.category);
+                    cout << "Ціна: "; cin >> p.price;
+                    cout << "Кількість: "; cin >> p.quantity;
+                    store.push_back(p);
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
                     save(store);
                 }
                 else if (action == 2) {
@@ -411,16 +454,22 @@ int main() {
                     for (auto& p : store) {
                         if (p.id == id) {
                             cout << "Нова назва: "; getline(cin, p.name);
+<<<<<<< HEAD
                             cout << "Нова категорія: "; getline(cin, p.category);
                             cout << "Нова ціна: "; cin >> p.price;
                             cout << "Нова кількість: "; cin >> p.quantity;
                             cin.ignore();
+=======
+                            cout << "Нова ціна: "; cin >> p.price;
+                            cout << "Нова кількість: "; cin >> p.quantity;
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
                             break;
                         }
                     }
                     save(store);
                 }
                 else if (action == 4) {
+<<<<<<< HEAD
                     sortAndPrintTable(store);
                 }
                 else if (action == 5) {
@@ -490,6 +539,16 @@ int main() {
                     }
                 }
                 else if (action == 10) {
+=======
+                    printTable(store);
+                }
+                else if (action == 5) {
+                    for (const auto& order : orders) {
+                        printCart(order.items, store);
+                    }
+                }
+                else if (action == 6) {
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
                     break;
                 }
             }
@@ -503,15 +562,23 @@ int main() {
                 cout << "║ 2. Додати товар до кошика                    ║\n";
                 cout << "║ 3. Переглянути кошик                         ║\n";
                 cout << "║ 4. Оформити замовлення                       ║\n";
+<<<<<<< HEAD
                 cout << "║ 5. Пошук товару                              ║\n";
                 cout << "║ 6. Назад                                     ║\n";
+=======
+                cout << "║ 5. Назад                                     ║\n";
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
                 cout << "╚══════════════════════════════════════════════╝\n";
                 cout << "Ваш вибір: ";
                 int action;
                 cin >> action;
 
                 if (action == 1) {
+<<<<<<< HEAD
                     sortAndPrintTable(store);
+=======
+                    printTable(store);
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
                 }
                 else if (action == 2) {
                     printTable(store);
@@ -527,9 +594,16 @@ int main() {
                             productExists = true;
                             if (p.quantity >= qty) {
                                 quantityAvailable = true;
+<<<<<<< HEAD
                                 p.quantity -= qty; 
                                 cart.push_back({ id, qty });
                                 save(store);  
+=======
+                                p.quantity -= qty;  // Зменшуємо кількість товару в магазині
+                                cart.push_back({ id, qty });
+                                save(store);  // Збереження змін у магазині
+                                break;
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
                             }
                             else {
                                 cout << "На складі недостатньо товару. Залишилось лише " << p.quantity << " одиниць.\n";
@@ -555,9 +629,12 @@ int main() {
                     cout << "Ваше замовлення оформлено! Дякуємо за покупку.\n";
                 }
                 else if (action == 5) {
+<<<<<<< HEAD
                     searchProduct(store);
                 }
                 else if (action == 6) {
+=======
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
                     break;
                 }
             }
@@ -568,4 +645,8 @@ int main() {
     }
 
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 157ee3838761bae71f898fc16ade2774d4fb33ba
